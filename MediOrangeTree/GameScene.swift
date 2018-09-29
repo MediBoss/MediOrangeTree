@@ -13,6 +13,7 @@ class GameScene: SKScene {
     
     var orangeTree: SKSpriteNode!
     var orange: Orange?
+    var touchStart:CGPoint = .zero
     
     override func didMove(to view: SKView) {
         orangeTree = childNode(withName: "tree") as! SKSpriteNode
@@ -26,12 +27,12 @@ class GameScene: SKScene {
         
         if atPoint(location).name == "tree" {
             orange = Orange()
+            orange?.physicsBody?.isDynamic = false
             orange?.position = location
             addChild(orange!)
             
-            // making the orange fly
-            let vector = CGVector(dx: 100, dy: 0)
-            orange?.physicsBody?.applyImpulse(vector)
+            //storing the location of the touch
+            touchStart = location
         }
     }
 }
