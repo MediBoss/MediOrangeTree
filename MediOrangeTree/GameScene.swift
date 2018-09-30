@@ -8,15 +8,19 @@
 
 import SpriteKit
 import UIKit
+import Foundation
 
 class GameScene: SKScene {
     
+    // Needed class properties
     var orangeTree: SKSpriteNode!
     var orange: Orange?
     var touchStart:CGPoint = .zero
     var lazer = SKShapeNode()
     var boundary = SKNode()
+    let numOfLevels: UInt32 = 2
     
+    // Function to check if the scene has moved
     override func didMove(to view: SKView) {
         orangeTree = childNode(withName: "tree") as! SKSpriteNode
         physicsWorld.contactDelegate = self
@@ -30,8 +34,17 @@ class GameScene: SKScene {
         lazer.lineCap = .round
         lazer.strokeColor = UIColor(white: 1, alpha: 0.3)
         addChild(lazer)
+        
+        
+        // Adding the sun to the scene
+        let sun = SKSpriteNode(imageNamed: "Sun")
+        sun.name = "sun"
+        sun.position.x = size.width - (sun.size.width * 0.75)
+        sun.position.y = size.height - (sun.size.height * 0.75)
+        addChild(sun)
     }
     
+    // function to check if the user has touched the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first!
@@ -45,6 +58,20 @@ class GameScene: SKScene {
             
             //storing the location of the touch
             touchStart = location
+        }
+        
+        
+        // changing the level by taping the sun
+        nodes(at: location).forEach { (node) in
+            if node.name == "sun" {
+                let randomLevel = Int(arc4random() % numOfLevels + 1)
+                if let scene = GameScene.load(level: randomLevel){
+                    scene.scaleMode = .aspectFill
+                    if let view = view {
+                        view.presentScene(scene)
+                    }
+                }
+            }
         }
     }
     
@@ -63,6 +90,8 @@ class GameScene: SKScene {
         lazer.path = path.cgPath
     }
     
+    
+    // function to check if the user stoped touching the screen
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // getting the location of the last touch
