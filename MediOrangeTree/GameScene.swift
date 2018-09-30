@@ -15,10 +15,16 @@ class GameScene: SKScene {
     var orange: Orange?
     var touchStart:CGPoint = .zero
     var lazer = SKShapeNode()
+    var boundary = SKNode()
     
     override func didMove(to view: SKView) {
         orangeTree = childNode(withName: "tree") as! SKSpriteNode
         physicsWorld.contactDelegate = self
+        
+        // making sure the oranges stay within the screen boundary
+        boundary.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: .zero, size: size))
+        boundary.position = .zero
+        addChild(boundary)
         
         lazer.lineWidth = 20
         lazer.lineCap = .round
@@ -64,8 +70,8 @@ class GameScene: SKScene {
         let location = touch.location(in: self)
         
         // getting the difference from where the touch began and where it ended
-        let dx = touchStart.x - location.x
-        let dy = touchStart.y - location.y
+        let dx = (touchStart.x - location.x) * 0.5
+        let dy = (touchStart.y - location.y) * 0.5
         
         // making the orange fly
         let vector = CGVector(dx: dx, dy: dy)
@@ -76,6 +82,11 @@ class GameScene: SKScene {
         //removing the lazer after the user finger has been removed
         lazer.path = nil
         
+    }
+    
+    // Class method to load .sks files
+    static func load(level: Int) -> GameScene? {
+        return GameScene(fileNamed: "Level-\(level)")
     }
 }
 

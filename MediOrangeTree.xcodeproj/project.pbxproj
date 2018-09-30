@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80BFA7A21604BCA001CF4A4 /* Level-2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B80BFA7921604BCA001CF4A4 /* Level-2.sks */; };
 		B840B72721603704004CBC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B840B72621603704004CBC7B /* AppDelegate.swift */; };
-		B840B72921603704004CBC7B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B840B72821603704004CBC7B /* GameScene.sks */; };
+		B840B72921603704004CBC7B /* Level-1.sks in Resources */ = {isa = PBXBuildFile; fileRef = B840B72821603704004CBC7B /* Level-1.sks */; };
 		B840B72D21603704004CBC7B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B840B72C21603704004CBC7B /* GameScene.swift */; };
 		B840B72F21603704004CBC7B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B840B72E21603704004CBC7B /* GameViewController.swift */; };
 		B840B73221603704004CBC7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B840B73021603704004CBC7B /* Main.storyboard */; };
@@ -45,9 +46,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B80BFA7921604BCA001CF4A4 /* Level-2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level-2.sks"; sourceTree = "<group>"; };
 		B840B72321603704004CBC7B /* MediOrangeTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediOrangeTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B840B72621603704004CBC7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B840B72821603704004CBC7B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		B840B72821603704004CBC7B /* Level-1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level-1.sks"; sourceTree = "<group>"; };
 		B840B72C21603704004CBC7B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B840B72E21603704004CBC7B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B840B73121603704004CBC7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,7 +118,8 @@
 			children = (
 				B840B73E2160373A004CBC7B /* Smashing-Things.atlas 2 */,
 				B840B72621603704004CBC7B /* AppDelegate.swift */,
-				B840B72821603704004CBC7B /* GameScene.sks */,
+				B840B72821603704004CBC7B /* Level-1.sks */,
+				B80BFA7921604BCA001CF4A4 /* Level-2.sks */,
 				B840B72C21603704004CBC7B /* GameScene.swift */,
 				B840B72E21603704004CBC7B /* GameViewController.swift */,
 				B840B73021603704004CBC7B /* Main.storyboard */,
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B840B73221603704004CBC7B /* Main.storyboard in Resources */,
+				B80BFA7A21604BCA001CF4A4 /* Level-2.sks in Resources */,
 				B840B7642160373A004CBC7B /* background.png in Resources */,
 				B840B7612160373A004CBC7B /* Rectangle-2-30x30.png in Resources */,
 				B840B76A2160373A004CBC7B /* Rectangle-2-60x20.png in Resources */,
@@ -230,7 +234,7 @@
 				B840B76E2160373A004CBC7B /* Rectangle-2-40x20.png in Resources */,
 				B840B75B2160373A004CBC7B /* Rectangle-1-40x20.png in Resources */,
 				B840B7692160373A004CBC7B /* Rectangle-2-60x30.png in Resources */,
-				B840B72921603704004CBC7B /* GameScene.sks in Resources */,
+				B840B72921603704004CBC7B /* Level-1.sks in Resources */,
 				B840B75D2160373A004CBC7B /* Rectangle-2-120x20.png in Resources */,
 				B840B76B2160373A004CBC7B /* Rectangle-1-20x20.png in Resources */,
 				B840B7722160373A004CBC7B /* Circle-2-30x30.png in Resources */,
